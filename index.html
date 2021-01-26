@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaiOS W2D page</title>
+    <style>
+        input, body{
+            margin: 0 !important;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            width: 240px;
+            height: 320px;
+            position: relative;
+        }
+        #w2d{
+            width: 240px;
+            height: 50px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.liaronce.com" target="_blank">Blog</a>&nbsp;<a href="https://github.com/LiarOnce/kaios-w2d" target="_blank">Repository</a><br>
+    <input type="button" value="Launch Developer Menu" id="w2d" onclick="w2dclick()">
+</body>
+<script>
+    function w2dclick (e) {
+        if(window.MozActivity) {
+            var devel = new MozActivity({
+                name: "configure",
+                data: {
+                    target: "device",
+                    section: "developer"
+                }
+            });
+        } else {
+            alert("Not support device.");
+        }
+    }
+</script>
+</html>
